@@ -1,0 +1,14 @@
+Nhạc trong xe của Vi vu đất Việt
+
+Sáu bản nhạc trong thư mục music/ đều lấy từ OpenGameArt theo giấy phép CC0 1.0 Universal (phạm vi công cộng). Không bắt buộc ghi công.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Tệp                   Tên bản              Tác giả           Trang nguồn
+silver-lining.mp3     Silver Lining (2025 remix, loop)   bobjt            https://opengameart.org/content/silver-lining
+vintage-hawaii.mp3    vintage hawaii       Tarush Singhal    https://opengameart.org/content/vintage-hawaii
+funky-menu-loop.mp3   Funky Menu Loop      iamoneabe         https://opengameart.org/content/funky-menu-loop
+synth-wave.mp3        Synth Wave           Pro Sensory (Alex McCulloch)   https://opengameart.org/content/synth-wave
+happy-adventure.mp3   Happy Adventure (Loop)   TinyWorlds    https://opengameart.org/content/happy-adventure-loop
+pure-raceway.mp3      Pure Raceway         MintoDog          https://opengameart.org/content/pure-raceway
+
+Tải ngày 23/11/2026. Mỗi tệp được chuẩn hóa âm lượng (EBU R128, -16 LUFS) và mã hóa lại MP3 128 kb/s bằng ffmpeg. Các bản ngắn (Silver Lining, Funky Menu Loop, Happy Adventure) được lặp hai hoặc ba lần trong tệp.

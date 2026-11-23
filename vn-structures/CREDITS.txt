@@ -1,0 +1,30 @@
+Nhà và chiều cao công trình trong chế độ Xuyên Việt
+
+Mặt bằng công trình © Google Research, Open Buildings v3 (2023).
+Sirko et al., Continental-scale building detection from high resolution satellite imagery.
+https://sites.research.google/open-buildings/
+https://doi.org/10.48550/arXiv.2107.12283
+
+Bản PMTiles do Chris Holmes chuyển đổi, phân phối trên Source Cooperative.
+https://source.coop/cholmes/google-open-buildings
+Game dùng đa giác ở mức phóng to 15 và ngưỡng tin cậy mà Google ước tính đạt
+độ chính xác 90% trong từng vùng. Dữ liệu đã lọc và làm tròn tọa độ đến 0,00001°.
+Các khu có nhà sát nhau, mái che hoặc tán cây có thể thiếu công trình.
+
+Chiều cao © Google Research, Open Buildings 2.5D Temporal v1, năm 2023.
+Sirko et al., High-Resolution Building and Road Detection from Sentinel-2.
+https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings-temporal_v1
+https://arxiv.org/abs/2310.11622
+Ước tính từ ảnh Copernicus Sentinel-2. Game đọc kênh building_height ở mức
+4 m và làm tròn chiều cao đến 0,5 m. Độ cao thực tế có thể khác, đặc biệt
+với nhà hẹp và nhà cao tầng. Mẫu mái và mặt tiền là phần mô phỏng của game.
+
+Hai bộ dữ liệu trên và các ô dữ liệu chuyển đổi trong thư mục này được dùng
+theo Open Database License 1.0 (ODbL).
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Các vùng xuất phát, đoạn QL21 qua Ba Sao và tuyến Chợ Biên Hòa – Văn miếu
+Trấn Biên có dữ liệu mặt bằng và chiều cao công trình đóng gói sẵn. Ở các
+đoạn khác, game tải các phần của hai bộ dữ liệu theo vị trí xe. Mã tạo dữ
+liệu đi kèm tại tools/index_structure_sources.py và tools/build_structure_tiles.mjs.
+Các thư viện đọc dữ liệu và giấy phép được ghi trong LIBRARIES.txt.

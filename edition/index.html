@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101210">
+  <meta name="description" content="Vi vu đất Việt – mô phỏng lái xe trên những cung đường Việt Nam, chọn xe và ôn lý thuyết. Một sản phẩm của thcphm.">
+  <meta property="og:site_name" content="Vi vu đất Việt">
+  <meta property="og:title" content="Vi vu đất Việt">
+  <meta name="author" content="thcphm">
+  <title>Vi vu đất Việt</title>
+  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="assets/fonts/condensed-extra-italic.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/routes/traces/cho-bien-hoa-van-mieu-tran-bien.webp" as="image">
+<style>#demoBanner{position:fixed;left:50%;bottom:6px;transform:translateX(-50%);z-index:9999;padding:5px 14px;border-radius:999px;background:#12261ce6;color:#d8f36a;font:600 12px/1.3 system-ui,sans-serif;text-decoration:none;white-space:nowrap;max-width:96vw;overflow:hidden;text-overflow:ellipsis}#demoBanner b{color:#fff}a[data-page='ban-do'],.map-jump,a[href^='../cup.html'],a[href^='../hall.html'],a[href^='../library.html'],a[href*='plan=custom'],a[href*='classic=1']{display:none!important}</style></head>
+<body>
+  <header class="topbar">
+    <div class="top-inner">
+      <a class="brand" href="#buong-lai" aria-label="Vi vu đất Việt, về buồng lái">
+        <img class="mark" src="assets/mark.svg" alt="" width="46" height="42">
+        <span>Vi vu đất Việt</span>
+      </a>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="#buong-lai" data-page="buong-lai"><i data-icon="wheel"></i>Buồng lái</a>
+        <a href="#ban-do" data-page="ban-do"><i data-icon="map-fold"></i>Bản đồ</a>
+        <a href="#gara" data-page="gara"><i data-icon="car"></i>Gara xe</a>
+        <a href="#ly-thuyet" data-page="ly-thuyet"><i data-icon="book"></i>Lý thuyết</a>
+      </nav>
+      <div class="bar-end">
+        <button class="icon-button sound-switch" id="sound" aria-label="Bật âm thanh" title="Bật âm thanh"><i data-icon="volume-x"></i></button>
+        <span class="bar-divider"></span>
+        <button class="signature-button" data-dialog="credits" title="Tác giả và nguồn dữ liệu" aria-label="thcphm, tác giả và nguồn dữ liệu"><span class="signature">thcphm</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="view" id="view-buong-lai" aria-labelledby="cockpit-title">
+      <div class="page-head">
+        <div class="title-wrap"><span class="heading-ticks" aria-hidden="true"></span><h1 id="cockpit-title">Buồng lái</h1></div>
+        <div class="page-actions">
+          <button class="soft-button" data-dialog="guide"><i data-icon="gamepad"></i>Hướng dẫn</button>
+        </div>
+      </div>
+      <div class="dashboard">
+        <article class="hero" id="route-hero" aria-labelledby="hero-title">
+          <div class="hero-land" id="hero-land"></div>
+          <div class="hero-screen"></div>
+          <div class="hero-car-wrap" id="hero-car-wrap"><img id="hero-car" src="assets/vehicles/apex-rear.webp" alt=""></div>
+          <div class="hero-shade"></div>
+          <div class="hero-top">
+            <span class="route-ribbon"><i data-icon="route"></i>Cung đường đang chọn</span>
+            <button class="hero-expand" id="scenic-open" aria-label="Xem toàn cảnh cung đường" title="Xem toàn cảnh"><i data-icon="expand"></i></button>
+          </div>
+          <div class="hero-info">
+            <div class="hero-kicker"><span class="road-code" id="hero-code">ĐỒNG NAI</span><span class="hero-region" id="hero-region">ĐÔNG NAM BỘ</span></div>
+            <h2 id="hero-title" class="long-title">Bến xe Trị An – Cầu Chiến khu D</h2>
+            <p class="hero-location"><i data-icon="pin"></i><span id="hero-location">Trị An · Đồng Nai</span></p>
+          </div>
+          <div class="hero-bottom">
+            <div><i data-icon="waypoints"></i><span id="hero-length">5,2 km</span></div>
+            <span></span>
+            <div><i data-icon="mountain"></i><span id="hero-terrain">Đường ven hồ</span></div>
+            <span></span>
+            <div><i data-icon="level"></i><span id="hero-level">Có dẫn đường</span></div>
+          </div>
+        </article>
+
+        <aside class="setup" aria-labelledby="setup-title">
+          <div class="panel-head"><div class="panel-title"><i data-icon="sliders"></i><h2 id="setup-title">Thiết lập chuyến đi</h2></div></div>
+          <div class="selected-car">
+            <div class="car-label"><span class="mini-label">Xe của bạn</span><span class="mono car-index" id="car-index">01 / 12</span></div>
+            <div class="model-name" id="model-name">Apex GT</div>
+            <div class="car-stage"><div class="stage-stripes" aria-hidden="true"></div><img id="model-photo" src="assets/vehicles/apex-studio.webp" alt="Apex GT màu cam"></div>
+          </div>
+          <div class="setup-controls">
+            <select class="quick-car-select" id="quick-car" aria-label="Chọn mẫu xe"></select>
+            <div class="mode-row"><span class="mini-label">Góc nhìn</span><div class="mode-tabs" role="group" aria-label="Góc nhìn khi lái">
+              <button type="button" data-perspective="cockpit">Ghế lái (POV)</button><button type="button" data-perspective="chase">Sau xe</button>
+            </div></div>
+            <div class="mode-row"><span class="mini-label">Chế độ lái</span><div class="mode-tabs" role="group" aria-label="Chế độ lái">
+              <button data-mode="free">Tự do</button><button data-mode="study">Lái &amp; học</button>
+            </div></div>
+            <button class="primary start-drive" data-start><i data-icon="wheel"></i>Bắt đầu lái</button>
+          </div>
+        </aside>
+      </div>
+
+      <section class="routes" aria-labelledby="routes-title">
+        <div class="section-line"><div class="section-heading"><i data-icon="map-fold"></i><h2 id="routes-title">Chọn cung đường</h2></div><a class="map-jump" href="#ban-do"><i data-icon="map-fold"></i>Bản đồ toàn quốc</a></div>
+        <div class="route-tools">
+          <label>Tìm cung đường<input id="route-query" type="search" placeholder="Tên đường, địa danh hoặc tỉnh" autocomplete="off"></label>
+          <label>Vùng<select id="route-region"><option value="">Cả nước</option><option>Miền Bắc</option><option>Miền Trung</option><option>Miền Nam</option></select></label>
+          <label>Tỉnh, thành<select id="route-province"><option value="">Tất cả tỉnh, thành</option></select></label>
+        </div>
+        <div class="route-actions"><output id="route-count" aria-live="polite"></output><a href="../index.html?plan=custom">Tự lập lộ trình</a></div>
+        <div class="route-cards" id="route-cards" role="group" aria-label="Chọn cung đường mô phỏng"></div>
+        <button type="button" class="soft-button route-more" id="more-routes" hidden>Xem thêm cung đường</button>
+      </section>
+      <nav class="original-modes" aria-label="Các chế độ chơi"><span>Chế độ chơi</span><a href="../index.html?classic=1">Xuyên Việt</a><a href="../cup.html">Cúp Bánh Mì</a><a href="../hall.html">Sân tập &amp; thi thử</a><a href="../library.html">Thư viện</a></nav>
+    </section>
+
+    <section class="view" id="view-ban-do" aria-labelledby="atlas-heading" hidden>
+      <div class="page-head"><div class="title-wrap"><span class="heading-ticks" aria-hidden="true"></span><h1 id="atlas-heading">Bản đồ Việt Nam</h1></div><button id="atlas-country" class="soft-button"><i data-icon="expand"></i>Toàn quốc</button></div>
+      <div class="atlas-layout">
+        <div id="map-pane" role="region" aria-label="Bản đồ Việt Nam, chọn điểm xuất phát"></div>
+        <aside class="atlas-rail">
+          <div class="panel-title"><i data-icon="pin"></i><h2>Điểm xuất phát</h2></div>
+          <label for="province">Tỉnh, thành phố</label><select id="province" disabled><option>Đang tải địa giới…</option></select>
+          <div id="commune-field"><label for="commune">Xã, phường Đồng Nai</label><select id="commune" disabled><option>Chọn xã, phường</option></select></div>
+          <label class="station-toggle"><input type="checkbox" id="map-stations" checked> Hiện trạm theo loại xe</label><small class="station-note">Điểm OSM đã ghi nhận. Trạng thái trạm không cập nhật trực tiếp.</small><button id="back-dong-nai" class="soft-button"><i data-icon="map-fold"></i>Về Đồng Nai</button>
+          <div class="atlas-picked"><span class="mini-label">Vị trí đã chọn</span><h3 id="pin-title">Hồ Trị An</h3><p id="pin-coords"></p></div>
+          <p class="atlas-tip" id="atlas-tip" role="status">Chạm lên bản đồ hoặc chọn địa danh để đặt điểm xuất phát.</p>
+          <button id="pin-drive" class="primary" disabled><i data-icon="wheel"></i>Lái từ đây</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view" id="view-gara" aria-labelledby="garage-title" hidden>
+      <div class="page-head"><div class="title-wrap"><span class="heading-ticks" aria-hidden="true"></span><h1 id="garage-title">Gara xe</h1></div><span class="section-total">3 mẫu xe</span></div>
+      <div class="fleet-filters" id="fleet-filters" role="group" aria-label="Lọc gara xe"></div><div id="garage-cards" class="garage-cards"></div>
+      <div class="garage-foot"><div><i data-icon="pin"></i><span id="garage-route"></span></div><button class="primary" data-start><i data-icon="wheel"></i>Bắt đầu lái</button></div>
+    </section>
+
+    <section class="view" id="view-ly-thuyet" aria-labelledby="theory-title" hidden>
+      <div class="page-head"><div class="title-wrap"><span class="heading-ticks" aria-hidden="true"></span><h1 id="theory-title">Ôn lý thuyết</h1></div><button class="soft-button" data-dialog="credits"><i data-icon="info"></i>Nguồn câu hỏi</button></div>
+      <div id="theory-app" class="theory-area"><p class="empty-state">Đang tải bộ câu hỏi…</p></div>
+    </section>
+    <footer class="footer"><span class="footer-by"><span class="footer-logo" aria-hidden="true"></span>Vi vu đất Việt <span class="dot-sep">/</span> Một sản phẩm của <strong>thcphm</strong></span><button data-dialog="credits">Tác giả &amp; nguồn dữ liệu<i data-icon="info"></i></button></footer>
+  </main>
+
+  <dialog id="info-dialog" class="dialog">
+    <div class="dialog-title"><h2 id="dialog-heading"></h2><button class="icon-button" id="close-info" aria-label="Đóng"><i data-icon="x"></i></button></div>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <link rel="stylesheet" href="session.css"><script src="fleet.js"></script><script src="energy.js"></script>
+  <script type="module" src="app.js"></script>
+<a id="demoBanner" href="../contact.html">Bản demo · 2 hành trình Biên Hòa, 3 xe, 40 câu hỏi mẫu · <b>Liên hệ để dùng bản đầy đủ</b></a></body>
+</html>

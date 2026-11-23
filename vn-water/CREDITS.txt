@@ -1,0 +1,20 @@
+Sông, hồ và dòng nước gần cầu trên mạng đường Vi vu đất Việt
+
+© OpenStreetMap contributors, https://www.openstreetmap.org/copyright
+Dữ liệu phái sinh được phân phối theo ODbL 1.0.
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Nguồn là bản Geofabrik Việt Nam ngày 18/11/2026.
+https://download.geofabrik.de/asia/vietnam/vietnam-261118.osm.pbf
+
+Các ô bản đồ gồm mặt nước, đường tim sông có tên và các đoạn sông, suối,
+kênh, mương hở đã được lập bản đồ gần cầu. Với các đoạn bổ sung, trình tạo
+dữ liệu tìm giao điểm của dòng nước với đường trên cầu rồi lần theo các
+đoạn nước nối trực tiếp qua cùng nút OSM trong phạm vi khoảng 650 m mỗi
+phía. Các cống ngầm và dòng chảy được ghi theo mùa được lọc khỏi lớp này.
+Tọa độ được giản lược và làm tròn tới 0,00001 độ. Trường thứ tư là bề
+rộng theo thẻ width hoặc est_width, tính bằng mét. Giá trị 0 cho biết
+game phải ước tính bề rộng theo loại dòng nước.
+
+Cách tạo lại dữ liệu từ cùng bản trích xuất có trong
+tools/build_vn_water.py và tools/build_crossing_water.py.

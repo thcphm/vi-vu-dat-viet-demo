@@ -1,0 +1,20 @@
+:is(#pit #choices,#choices,#quiz .q-options) button[data-answer-result="correct"] {
+  background: #204332;
+  border-color: #87dba1;
+  color: #f2fff5;
+  opacity: 1;
+}
+:is(#pit #choices,#choices,#quiz .q-options) button[data-answer-result="wrong"] {
+  background: #482a30;
+  border-color: #ee92a0;
+  color: #fff3f5;
+  opacity: 1;
+}
+.answer-mark {
+  display: block;
+  margin-top: .25em;
+  font-size: .85em;
+  font-weight: 700;
+}
+[data-answer-result="correct"] .answer-mark { color: #a1efb7; }
+[data-answer-result="wrong"] .answer-mark { color: #ffc0ca; }

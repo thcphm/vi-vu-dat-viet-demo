@@ -1,0 +1,32 @@
+Classic GT coupe, rally hatch and urban taxi by tevy, CC0 1.0 Universal.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+gt-coupe.glb: Classic Coupe, version 1, LOD1
+https://tevy.dev/models/classic-coupe/v1/lod1.glb
+
+rally-car.glb: Rally Car, version 1, LOD1
+https://tevy.dev/models/rally-car/v1/lod1.glb
+
+city-taxi.glb: City Taxi, version 1, LOD1
+https://tevy.dev/models/city-taxi/v1/lod1.glb
+
+Meshes decoded from Meshopt and textures transcoded for baseline glTF loading.
+Window transmission changed to tinted alpha blending. Wheel and steering pivots
+retain the original articulated hierarchy. Paint and tail light material names
+were normalized for game control.
+City taxi body repainted in golden yellow.
+
+family-suv.glb is adapted from Mid-Size SUV by tevy, v1 LOD1, CC0 1.0.
+https://tevy.dev/models/suv/v1/lod1.glb
+The three-row version has a longer wheelbase and cargo area, a raised roof,
+seven seats, steering pivots, and embedded JPEG maps.
+
+Additional vehicles by tevy, CC0 1.0 Universal:
+electric-gt.glb: Electric Grand Tourer, v1 LOD1
+https://tevy.dev/models/electric-gt/v1/lod1.glb
+family-minivan.glb: Family Minivan, v1 LOD1
+https://tevy.dev/models/family-minivan/v1/lod1.glb
+muscle-car.glb: Muscle Car, v1 LOD0
+https://tevy.dev/models/muscle-car/v1/lod0.glb
+Geometry decoded, textures embedded as JPEG and glass adapted for mobile.
+Wheel and steering pivots and material names adapted for the game.

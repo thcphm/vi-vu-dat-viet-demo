@@ -1,0 +1,90 @@
+.journey[data-phase=grid] #world {
+  inset:0; width:100%; height:100%;
+}
+.journey[data-phase=grid] header {
+  inset:0 0 auto; height:auto; min-height:58px; padding:10px max(20px,4vw);
+  flex-wrap:nowrap; background:linear-gradient(#102325b8,transparent);
+  border:0; text-shadow:0 1px 5px #142223;
+}
+.journey[data-phase=grid] header nav {align-self:center; height:auto}
+.journey[data-phase=grid] header nav a {color:white; border:0; padding:6px 0}
+.journey[data-phase=grid] header nav [aria-current] {color:var(--lime)}
+.journey .opening {
+  position:fixed; inset:0; display:flex; align-items:flex-end; pointer-events:none;
+  padding:0 max(26px,6vw) max(54px,8vh); color:#fff8e9;
+  background:linear-gradient(0deg,#091a1de0,transparent 43%),
+             linear-gradient(72deg,#11242650,transparent 49%);
+}
+.openingCopy {max-width:min(660px,100%)}
+.journey .opening h1 {
+  font:italic 700 clamp(52px,6vw,94px)/1.04 "Barlow Condensed",sans-serif;
+  letter-spacing:-.018em; margin:0 0 .20em; text-wrap:balance;
+  text-shadow:0 2px 14px #10212785;
+}
+.openingActions {display:flex; align-items:center; gap:10px}
+.openingActions button {
+  pointer-events:auto; min-height:46px; padding:10px 22px; border-radius:5px;
+  font:650 1rem/1.25 system-ui,sans-serif; cursor:pointer;
+}
+.opening #launch {background:var(--lime); color:#16271b; border:1px solid var(--lime)}
+.opening #launch:disabled {background:#d9dfd0; border-color:#d9dfd0; cursor:wait}
+.opening #startGuided, .opening #openSetup {background:#132223a8; border:1px solid #ffffff70; color:white}
+.openingActions button:focus-visible {outline:3px solid white; outline-offset:4px}
+#loadStatus {margin:.7em 0 0; color:white; background:#182926db; padding:.5em .8em; border-radius:4px}
+#loadStatus:empty {display:none}
+#journeySetup {width:min(415px,94vw); background:var(--paper); color:var(--ink); color-scheme:light}
+#journeySetup .guide p {color:var(--ink)}
+.journey[data-awaiting-motion] .telemetry {visibility:hidden; opacity:0}
+.journey .telemetry {transition:opacity .28s}
+@media(max-width:650px) {
+  .journey[data-phase=grid] header {padding:6px 16px; gap:8px; justify-content:space-between}
+  .journey[data-phase=grid] header nav {width:auto; order:0; gap:12px}
+  .journey[data-phase=grid] header nav a {font-size:13px}
+  .journey[data-phase=grid] header nav [aria-current] {display:none}
+  .journey .opening {padding:0 max(20px,env(safe-area-inset-left)) max(42px,calc(5dvh + env(safe-area-inset-bottom)))}
+  .journey .opening h1 {font-size:clamp(48px,11vw,70px)}
+}
+@media(max-height:480px) and (orientation:landscape) {
+  .journey .opening {padding-bottom:22px}
+  .journey .opening h1 {font-size:44px}
+}
+@media(prefers-reduced-motion:reduce) {.journey .telemetry {transition:none}}
+
+#openingStill {
+  position:fixed; inset:0; pointer-events:none;
+  background:#273d3b var(--wide-view,none) center / cover no-repeat;
+}
+@media(orientation:portrait) {
+  #openingStill {background-image:var(--tall-view,none)}
+}
+.departureRibbon {
+  position:absolute; z-index:1; top:calc(68px + env(safe-area-inset-top)); left:var(--gutter,5vw); right:var(--gutter,5vw);
+  display:flex; align-items:center; flex-wrap:wrap; gap:6px; pointer-events:none;
+}
+.departureChoices {display:contents}
+.departureChoices a,.passCollection {
+  pointer-events:auto; padding:7px 13px; text-decoration:none; color:#fffdf1;
+  background:#172622df; border:1px solid #b9c6bb8c; border-radius:18px;
+  font:600 14px/1.25 system-ui,sans-serif;
+}
+.departureChoices a[aria-current] {color:#18271a; background:var(--lime);border-color:var(--lime)}
+.passCollection {border-color:#d9eab3;color:#e5f8be;background:#203e30}
+.departureChoices a:focus-visible,.passCollection:focus-visible {outline:3px solid white;outline-offset:2px}
+@media(max-width:650px) {
+  .departureRibbon {left:max(16px,env(safe-area-inset-left));right:16px;top:calc(61px + env(safe-area-inset-top));gap:5px}
+  .departureChoices a,.passCollection {padding:7px 10px;font-size:13px}
+}
+@media(max-height:480px) and (orientation:landscape) {
+  .departureRibbon {top:calc(46px + env(safe-area-inset-top))}
+}
+.journey[data-lakeside] .routeInfo [data-weather],
+.journey[data-lakeside] .routeInfo #trip,
+.journey[data-lakeside] .telemetry label,
+.journey[data-awaiting-motion] .navigationDock {display:none}
+
+#guidedInfo {font-weight:700; color:#ddffa3}
+#guidedArrival button {display:block; width:100%; margin-top:8px}
+@media(max-width:650px) {
+  .arcade .openingActions {flex-wrap:wrap}
+  .arcade .openingActions #startGuided {flex:1.3}
+}

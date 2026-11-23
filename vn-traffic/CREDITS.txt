@@ -1,0 +1,35 @@
+Giao thông đường bộ Việt Nam trong Vi vu đất Việt
+
+© OpenStreetMap contributors
+https://www.openstreetmap.org/copyright
+Cơ sở dữ liệu trích xuất được phân phối theo ODbL 1.0.
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Nguồn: bản Việt Nam của Geofabrik tại thời điểm 2026-11-18T21:21:02Z.
+https://download.geofabrik.de/asia/vietnam/vietnam-261118.osm.pbf
+index.json ghi mã SHA-256, số đoạn đường có từng thuộc tính và số nút
+điều khiển riêng biệt trên mạng đường lái được.
+
+Game ghép theo loại đường, hai đầu đoạn và hình học của đoạn. Bộ dữ liệu
+gồm số làn, làn theo chiều, bề rộng, tốc độ ghi bằng số, mặt đường,
+cầu, hầm, đèn và lối sang đường tại những nơi có thông tin trong OSM.
+Vạch qua đường cần có thẻ xác nhận đã kẻ vạch. Vị trí đèn dựa trên OSM.
+Thời gian và pha đèn do game mô phỏng.
+
+Chỉ dẫn rẽ dùng các quan hệ cấm rẽ hoặc bắt buộc rẽ không điều kiện qua
+một nút, theo loại phương tiện. Quan hệ qua cả đoạn đường và các quy định
+phụ thuộc khung giờ chưa được mô phỏng. Số làn, bề rộng và tốc độ có
+thể thiếu trên từng tuyến. Số nút đèn có thể khác số giao lộ.
+
+Tạo lại từ thư mục gốc (Python 3.11+ và osmium):
+python tools/build_vn_traffic.py vietnam-261118.osm.pbf dist/vn-roads dist/vn-traffic
+
+tunnels.json dùng cùng bản trích xuất để phân biệt lối xe xuyên qua nhà
+và liên kết các đoạn hầm với cửa hầm. Tim đường, vị trí nút và loại lối
+đi lấy từ OSM. Khi thiếu mặt cắt đo đạc, game ước lượng cao độ sàn, độ
+dốc đường dẫn và tiết diện từ địa hình cùng các đầu tuyến.
+python tools/build_vn_tunnels.py vietnam-261118.osm.pbf dist/vn-roads dist/vn-traffic
+
+Mặt cắt hộp đôi, tĩnh không, chiều dài đường dẫn và độ dốc thiết kế
+của hầm sông Sài Gòn theo Trung tâm Quản lý điều hành giao thông đô thị TP.HCM:
+https://dieuhanhgiaothong-sxd.hochiminhcity.gov.vn/gioi-thieu-tong-quan-duong-ham-thu-thiem-vuot-song-sai-gon-123.html

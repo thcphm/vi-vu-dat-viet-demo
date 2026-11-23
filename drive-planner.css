@@ -1,0 +1,22 @@
+#drivePlanner {width:min(510px,94vw); max-height:88dvh; overflow:auto; color:var(--ink,#182922); background:var(--paper,#f5f5ed); color-scheme:light}
+#drivePlanner h2 {margin:0}
+#drivePlanner .planTabs {display:flex;gap:4px;padding:4px;margin:18px 0;background:#dde6da;border-radius:10px}
+#drivePlanner .planTabs button {flex:1;min-height:42px;margin:0;background:transparent;border:0;color:#345442}
+#drivePlanner .planTabs [aria-pressed=true] {background:#fff;color:#142f22;box-shadow:0 1px 5px #172e201a}
+#customTrip label {display:block;font-weight:700;margin:10px 0 4px}
+#customTrip button {width:100%;min-height:44px;text-align:left;white-space:normal;background:white;color:#254635;border:1px solid #97ac98}
+#featuredChoices {padding:0;border:0;margin:0;min-width:0}
+#featuredChoices label {display:grid;grid-template-columns:20px 1fr auto;align-items:center;gap:9px;min-height:43px;padding:7px 3px;border-bottom:1px solid #c8d5c8;font-size:.95rem;cursor:pointer}
+#featuredChoices input {width:17px;height:17px;accent-color:#346741}
+#featuredChoices label {grid-template-columns:18px clamp(45px,13vw,66px) 1fr auto;padding-inline:5px}
+#featuredChoices img {width:100%;height:40px;object-fit:cover;border-radius:3px}
+#featuredChoices label:has(:checked) {background:#e3eddb}
+#featuredDescription {margin:12px 0 4px;color:#314e3b}
+#featuredTrips>a {color:#284a36;text-decoration:underline}
+#featuredChoices label span {font-variant-numeric:tabular-nums;color:#466351;white-space:nowrap}
+.planActions {display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.planActions button {min-height:44px}
+#planStatus {line-height:1.45} #planStatus:empty {display:none}
+
+#drivePlanner #closePlanner,#drivePlanner #planRanking {background:#fff;color:#203d2f;border:1px solid #96a99b}
+#drivePlanner button:focus-visible,#featuredChoices input:focus-visible {outline:3px solid #317645;outline-offset:2px}

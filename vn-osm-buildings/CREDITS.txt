@@ -1,0 +1,16 @@
+Nhà và công trình Việt Nam
+
+© OpenStreetMap contributors
+https://www.openstreetmap.org/copyright
+
+Cơ sở dữ liệu trích xuất được phân phối theo ODbL 1.0.
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Nguồn là bản Việt Nam của Geofabrik. Ngày chụp, địa chỉ tải và SHA-256
+của dữ liệu đầu vào nằm trong index.json.
+https://download.geofabrik.de/asia/vietnam.html
+
+Các ô chứa đường bao công trình, sân trong, loại nhà, chiều cao,
+số tầng và hình dạng mái khi cộng đồng OSM đã ghi nhận. Tọa độ đã được
+làm tròn đến 0,00001 độ. Mỗi phần đa giác giữ mã way hoặc relation gốc.
+Mã để tạo lại dữ liệu nằm trong tools/build_vn_osm_buildings.py.

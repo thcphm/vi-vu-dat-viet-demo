@@ -1,0 +1,20 @@
+Chỉ mục tìm kiếm địa điểm Việt Nam
+
+© OpenStreetMap contributors
+https://www.openstreetmap.org/copyright
+Open Data Commons Open Database License 1.0
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Tên, vị trí, loại địa điểm, số nhà và tên đường lấy từ bản Việt Nam
+ngày 18/11/2026 của Geofabrik. Địa giới từ bản ngày 01/01/2025 bổ sung
+tên xã, huyện, tỉnh trước sắp xếp để có thể tìm bằng địa chỉ cũ.
+https://download.geofabrik.de/asia/vietnam.html
+
+Số nhà được lập chỉ mục khi đối tượng OSM có cả số nhà và tên đường.
+Game gộp các đoạn đường cùng tên trong cùng địa phương và đặt ghim
+trên một đoạn đường đã lập bản đồ. Độ phủ địa chỉ và địa điểm phụ
+thuộc vào đóng góp OpenStreetMap ở từng nơi.
+
+Dữ liệu phái sinh được phân phối theo ODbL 1.0. index.json ghi
+liên kết bản nguồn và mã SHA-256. Mã tạo dữ liệu nằm trong
+tools/build_vn_search.py ở kho mã nguồn Vi vu đất Việt.

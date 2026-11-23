@@ -1,0 +1,23 @@
+Bộ mẫu xe VietForward cho Vi vu đất Việt · thcphm
+
+VietForward (VF) là hãng xe điện hư cấu của trò chơi, không liên quan tới hãng xe có thật nào. Năm mô hình minh họa phục vụ lái xe trong trò chơi. Thân xe, bánh xe, đường sáng, sơn, khung xương chuyển động, biển THCPHM và ảnh gara được dựng mới bằng Blender. Hình dáng, màu sắc và kích thước được giản lược cho mô phỏng.
+
+Tên tệp     Mẫu                    Đặc điểm minh họa
+vf3        VietForward VF 3       SUV điện mini hai cửa, vòm bánh vuông
+vf5        VietForward VF 5       SUV điện cỡ nhỏ, mui hai tông màu
+vf7        VietForward VF 7       Crossover điện với mui coupe vuốt thấp
+vf8        VietForward VF 8       SUV điện cỡ trung, năm chỗ
+vf9        VietForward VF 9       SUV điện ba hàng ghế, trục cơ sở dài
+
+Mỗi mẫu gồm một tệp GLB cho động cơ Three.js và hai ảnh WebP trong suốt. Hậu tố -studio là góc nhìn gara. Hậu tố -rear là góc nhìn phía sau. Các ảnh được kết xuất từ cùng mô hình với tệp GLB.
+
+Tái tạo từ mã nguồn
+make_vietforward.py cùng vietforward_specs.py (thư mục tools/edition/vietforward) dùng Blender 4.3+. Khi tạo từ ví dụ dưới đây, thư mục làm việc chứa cả hai tệp. Chọn vf3, vf5, vf7, vf8 hoặc vf9 làm đối số cuối.
+blender -b -P make_vietforward.py -- vf3
+blender -b -P make_vietforward.py -- vf3 model-only
+python finish_renders.py vf3-studio vf3-rear
+
+Bước xuất WebP dùng Pillow để cắt nền trong suốt và lọc nhẹ các điểm nhiễu trong ảnh kết xuất. Biển số và chữ tên mẫu dùng các đường nét chữ đã chuyển thành hình học từ phông DejaVu Sans Condensed Bold.
+
+Quy ước GLB
+Đơn vị mét. +Y hướng lên, +Z hướng về mũi xe, tâm XZ nằm giữa và bánh chạm đất tại Y=0. Các nút wheel_FL, wheel_FR, wheel_RL, wheel_RR xoay quanh trục X cục bộ theo dấu của động cơ. steer_FL và steer_FR điều khiển hướng bánh trước. Hai vật liệu paint_body và paint nhận màu thân xe. light_rear điều khiển dải đèn hậu.

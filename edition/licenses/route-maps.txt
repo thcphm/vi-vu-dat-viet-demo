@@ -1,0 +1,16 @@
+Bản đồ xem trước các cung đường
+
+Đường đi và đồ thị đường, sông, hồ: © OpenStreetMap contributors, ODbL 1.0. Các đường kẻ được vẽ từ tọa độ trong bộ dữ liệu của trò chơi.
+https://www.openstreetmap.org/copyright
+
+Lớp phủ mặt đất lấy từ ESA WorldCover 10 m 2021 v200, Zanaga et al. (2022), CC BY 4.0. Dữ liệu được đổi màu cho bản đồ.
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium.
+https://esa-worldcover.org/en
+https://doi.org/10.5281/zenodo.7254221
+https://creativecommons.org/licenses/by/4.0/
+
+Địa hình: Mapzen Terrain Tiles. GMTED2010 và SRTM do USGS cung cấp, ETOPO1 do NOAA cung cấp. Các lưới độ cao trong trò chơi được dùng để vẽ địa hình tô bóng và đường đồng mức.
+https://registry.opendata.aws/terrain-tiles/
+https://github.com/tilezen/joerd/blob/master/docs/attribution.md
+
+Mũi tên B chỉ hướng Bắc. Vòng tròn màu vàng xanh đánh dấu điểm xuất phát, hình thoi màu cam đánh dấu điểm kết thúc.

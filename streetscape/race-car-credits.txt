@@ -1,0 +1,6 @@
+﻿Mid-Engine Supercar v2 by tevy, CC0 1.0 Universal.
+Model: https://tevy.dev/models/supercar
+Source geometry: https://tevy.dev/models/supercar/v2/lod1.glb
+License: https://creativecommons.org/publicdomain/zero/1.0/
+For this game the mesh was decoded, the textures were converted to JPEG,
+and the glass was adapted for real-time rendering on mobile GPUs.

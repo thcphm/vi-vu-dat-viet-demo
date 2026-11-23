@@ -1,0 +1,88 @@
+The asphalt diffuse texture is adapted from Asphalt 04 by Sergej Majboroda and Jenelle van Heerden, Poly Haven, CC0. https://polyhaven.com/a/asphalt_04
+
+The sky panorama is resized from Kloofendal 48d Partly Cloudy (Pure Sky) by Greg Zaal and Jarod Guest, Poly Haven, CC0. https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky
+
+Family Sedan v1 LOD1 by tevy, CC0 1.0. Geometry grouped by material, scaled for the lesson and repainted. https://tevy.dev/models/family-sedan
+
+Traffic models from tevy, CC0 1.0, version 1. Assets converted to baseline glTF with JPEG maps, transparent windows, varied paints and posed helmeted riders for this game.
+https://tevy.dev/models/hatchback
+https://tevy.dev/models/kei-van
+https://tevy.dev/models/motor-scooter
+https://tevy.dev/models/casual-walker
+https://tevy.dev/models/hiker
+https://tevy.dev/models/road-worker
+
+The themed street pedestrians adapt those three CC0 human rigs with original clothing, painted graphics and costume geometry.
+
+GLTFLoader and SkeletonUtils are from three.js r160, MIT. The license is in ../THREE-LICENSE.txt.
+
+Leafy Grass by Charlotte Baglioni and Brown Mud by Rob Tuytel, Poly Haven, CC0. The diffuse maps were converted to WebP for the roadside grass and earth.
+https://polyhaven.com/a/leafy_grass
+https://polyhaven.com/a/brown_mud
+
+The two roadside vegetation sprites are orthographic renders of the game meshes in tree-models.js. The broadleaf tree uses Poly Haven’s Jacaranda Tree scan. The palm uses the game’s frond and trunk geometry and the CC0 foliage and bark materials listed below. Rebuild the sprites with tools/build_roadside_cutouts.py.
+
+Scanned road, verge, upland ground, meadow and plaster materials are adapted from the following Poly Haven assets. Color, OpenGL normal and roughness maps are stored locally in WebP format. Poly Haven assets are CC0.
+https://polyhaven.com/license
+https://polyhaven.com/a/asphalt_04
+https://polyhaven.com/a/brown_mud_leaves_01
+https://polyhaven.com/a/aerial_grass_rock
+https://polyhaven.com/a/leafy_grass
+https://polyhaven.com/a/plastered_wall_04
+
+The distant terrain mesh uses Mapzen Terrain Tiles on AWS, accessed 2026-11-19. Global GMTED2010 and SRTM terrain data courtesy of the U.S. Geological Survey. Global ETOPO1 terrain data courtesy of the U.S. National Oceanic and Atmospheric Administration. Heights are quantized from the Terrarium tiles in the Vietnam extent. The game samples this terrain for the national road relief and mountain stage elevation profiles.
+https://registry.opendata.aws/terrain-tiles/
+https://github.com/tilezen/joerd/blob/master/docs/attribution.md
+
+The mountain racing stages use additional Mapzen Terrarium tiles (2026-11-20), sampled more densely near the course and at wider intervals toward the horizon.
+The Kim Bảng and Phi Lai landmark surroundings also use local Mapzen Terrarium elevation grids from the same AWS dataset. Building outlines around Sở Kiện and Tam Chúc include extracts from the OpenStreetMap API, © OpenStreetMap contributors, ODbL 1.0.
+
+Regional terrain colour is adapted from NASA Blue Marble Next Generation, accessed through NASA GIBS. It is a historical satellite composite.
+https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/
+
+The six Vietnamese shopfront elevations are architectural drawings of fictional stores. Their signs use Barlow Condensed under the SIL Open Font License (../ui-font/OFL.txt). The painted surfaces use Poly Haven’s CC0 Plastered Wall 04 scan. The elevation drawings and texture assembly are in tools/build_shopfronts.py.
+
+Rock Face by Greg Zaal (photography) and Dario Barresi (processing), Poly Haven, CC0. The road cut uses locally encoded 1K diffuse and OpenGL normal maps. The original scan covers 2.4 m across.
+https://polyhaven.com/a/rock_face
+https://polyhaven.com/license
+
+Fern 02 by Rob Tuytel and Rico Cilliers, Poly Haven, CC0. The transparent bank fern billboard is a side-view render of one of the original clumps with its diffuse and alpha maps.
+https://polyhaven.com/a/fern_02
+https://polyhaven.com/license
+
+Pine Tree 01 by Rob Tuytel (photography) and Rico Cilliers (modeling), Poly Haven, CC0. The mountain pine billboard is a locally rendered orthographic view of the second full-resolution tree.
+https://polyhaven.com/a/pine_tree_01
+https://polyhaven.com/license
+Visitor atlas and featured mountain passes: satellite imagery, land cover, vegetation index and inland/coastal water masks
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium.
+Zanaga et al. (2022), ESA WorldCover 10 m 2021 v200 (CC BY 4.0).
+The simulator crops and resamples the annual Sentinel-2 RGBNIR composite, derives the vegetation index from red and near-infrared reflectance and extracts permanent water from the 10 m classification.
+The sight-imagery atlas retains local detail from the 10 m source around destinations and their road approaches. Transparent areas have no observation in that source.
+https://esa-worldcover.org/en/data-access
+https://doi.org/10.5281/zenodo.7254221
+https://creativecommons.org/licenses/by/4.0/
+
+Visitor atlas surface elevation, resampled and quantised to metres
+produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved.
+https://doi.org/10.5270/ESA-c5d3d65
+Supplemental elevation pages around authored destinations and their mapped road approaches sample the Copernicus GLO-30 DSM at 1/2560 degree, retaining integer metres with lossless PNG encoding. Ocean-only degree blocks absent from both GLO-30 and GLO-90 use sea level. Retrieved 2026-11-22.
+https://registry.opendata.aws/copernicus-dem/
+Ground formation around Hồ Hoàn Kiếm follows the elevation range in Hanoi's H1-1B plan, Decision 1360/QĐ-UBND, section 4.5.2.2. Individual street levels are approximated.
+https://qhkt.hanoi.gov.vn/documents/401804/868172/1360%2Bh1-1b.pdf/d6e09ce9-12f3-44f5-b53a-ad9ac862a686
+
+Mapped paths, steps, plazas, trees, embankments and building parts in the visitor atlas
+© OpenStreetMap contributors, ODbL 1.0. Regional extract supplied by Geofabrik.
+https://www.openstreetmap.org/copyright
+https://download.geofabrik.de/asia/vietnam.html
+
+Photographs in the visitor atlas are distributed with individual credits, source file pages and licences in sight-photos/index.json. These credits are also shown beneath each photograph in the game.
+
+Roadside tree geometry and foliage colors were adapted from these CC0 Poly Haven models and bark scans.
+https://polyhaven.com/a/island_tree_01
+https://polyhaven.com/a/jacaranda_tree
+https://polyhaven.com/a/tree_small_02
+https://polyhaven.com/a/pine_sapling_medium
+https://polyhaven.com/a/pine_bark
+https://polyhaven.com/a/palm_bark
+Landmark grain packs neutral luminance from the plaster and rock scans above and Wood Planks by Poly Haven (CC0).
+https://polyhaven.com/a/wood_planks

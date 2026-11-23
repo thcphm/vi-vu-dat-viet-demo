@@ -1,0 +1,107 @@
+.arcade {
+  --left: max(12px, env(safe-area-inset-left));
+  --right: max(12px, env(safe-area-inset-right));
+  --top: max(6px, env(safe-area-inset-top));
+  --bottom: max(8px, env(safe-area-inset-bottom));
+  overscroll-behavior: none;
+}
+.arcade header {
+  padding: var(--top) max(var(--right), 2vw) 5px max(var(--left), 2vw);
+  pointer-events: none;
+}
+.arcade header > * {pointer-events: auto}
+.arcade .grid {overflow-y: auto; overscroll-behavior: contain}
+.arcade .gridcopy {margin-block: auto}
+.arcade .hud {top: calc(var(--top) + 53px)}
+.arcade .telemetry, .arcade .rank, .arcade .chrono {font-variant-numeric: tabular-nums}
+.arcade .telemetry strong {letter-spacing: -.06em;line-height: 1}
+.arcade #street {overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+.arcade dialog {overscroll-behavior: contain;max-height: calc(100dvh - var(--top) - var(--bottom) - 12px)}
+.arcade .touch {pointer-events: none;z-index: 2}
+.arcade .touch > div {display:flex;align-items:flex-end;gap:clamp(4px,1vw,9px)}
+.arcade .touch button {
+  pointer-events:auto; -webkit-touch-callout:none; -webkit-user-select:none;
+  min-width:44px; min-height:50px; padding:8px;
+  border:1px solid #d6e2de80; border-bottom:3px solid #96a39f;
+  border-radius:12px; background:linear-gradient(155deg,#2d373bec,#151b20ef);
+  box-shadow:0 3px 10px #0005; font-size:14px;
+}
+.arcade .touch [data-key="w"] {min-height:61px;min-width:54px;background:var(--fire);border-color:var(--fire);color:#101916}
+.arcade .touch [data-key~="shift"] {color:var(--yellow);border-color:color-mix(in srgb,var(--yellow) 65%,transparent)}
+.arcade .touch button.active {transform:translateY(2px);background:var(--yellow);color:#122019;border-color:#fff}
+.arcade .osm-credit {right:var(--right);bottom:max(0px,env(safe-area-inset-bottom))}
+.journey #landmark {color:#ffe2a5;font-size:13px}
+.journey :is(#tourView, #scenicRadio){pointer-events:auto;margin-top:4px;padding:4px 8px;font-size:12px}
+#tourCamera{position:fixed;bottom:calc(var(--bottom) + 16px);left:50%;transform:translateX(-50%);display:flex;
+  gap:16px;align-items:center;justify-content:space-between;max-width:94vw;width:max-content;padding:10px 14px;
+  border:1px solid #697974;border-radius:9px;background:#142125ed}
+#tourCamera strong,#tourCamera small{display:block}
+#tourCamera small{color:#c7d6ce}
+#backToCar{min-height:44px;white-space:nowrap}
+body:has(#tourCamera:not([hidden])) #world{touch-action:none;cursor:grab}
+@media (any-pointer:coarse), (max-width:700px) {
+  .arcade .tools button, .arcade dialog button, .arcade .grid select, .arcade .grid button {min-height:44px}
+  .arcade .tools button {padding-inline:8px;font-size:13px}
+  .arcade .brand {font-size:clamp(15px,4.2vw,20px)}
+  .arcade .touch {display:flex;left:var(--left);right:var(--right);bottom:calc(var(--bottom) + 4px)}
+  .journey .touch {bottom:calc(var(--bottom) + 15px)}
+  .arcade .keyboardHint, .arcade .keys {display:none}
+  .arcade .telemetry, .arcade .track {bottom:calc(var(--bottom) + 80px)}
+  .journey .telemetry, .journey .track {bottom:calc(var(--bottom) + 91px)}
+  .arcade .track,.arcade .rank,.arcade .routeInfo {left:var(--left)}
+  .arcade .chrono {left:calc(var(--left) + 72px)}
+  .arcade .telemetry,.arcade #map {right:var(--right)}
+  .arcade .telemetry {padding:7px 10px}
+  .arcade .telemetry strong {font-size:31px}
+  .arcade .telemetry meter {width:54px}
+  .arcade .routeInfo {max-width:calc(100% - var(--left) - var(--right) - 108px)}
+  .arcade #callout {top:auto;bottom:calc(var(--bottom) + 166px);max-width:calc(100% - 28px);width:max-content}
+  .arcade #places button {min-height:44px}
+  .arcade #findPlace {font-size:16px}
+}
+@media (max-width:650px) and (orientation:portrait) {
+  .arcade .grid {padding:max(62px,calc(var(--top) + 55px)) var(--right) calc(var(--bottom) + 15px) var(--left)}
+  .arcade .gridcopy {height:auto;min-height:100%;flex-shrink:0}
+  .arcade .gridcopy > p {margin-bottom:auto;padding-bottom:12px}
+  .arcade .gridcopy > select {flex-shrink:0}
+  .arcade .extra a {display:grid;align-items:center;min-height:40px;margin:0}
+  .arcade #atlas .atlasCols {grid-template-columns:minmax(0, .8fr) minmax(0,1.2fr)}
+  .arcade .track {width:auto;max-width:47%;padding:7px 9px}
+}
+@media (orientation:landscape) and (max-height:590px) {
+  .arcade .grid {align-items:flex-start;padding:calc(var(--top) + 49px) var(--right) calc(var(--bottom) + 12px) max(var(--left),3vw)}
+  .arcade .gridcopy {margin:0;max-width:min(46vw,390px)}
+  .arcade .gridcopy h1 br {display:none}
+  .arcade .gridcopy h1 i {margin-left:.16em}
+  .arcade .gridcopy h1 {font-size:36px;margin:0}
+  .arcade .hud {top:calc(var(--top) + 48px)}
+  .arcade .track {top:0;bottom:auto;left:50%;transform:translateX(-50%);max-width:24vw}
+  .arcade .routeInfo {max-width:30vw}
+  .arcade #callout {top:calc(var(--top) + 108px);bottom:auto}
+  .arcade .telemetry {bottom:calc(var(--bottom) + 78px)}
+}
+#atlas .atlasBrowse{min-width:0;display:flex;flex-direction:column;gap:5px}
+#atlas .atlasBrowse label{font-size:13px;color:#bfd2cb;font-weight:650}
+#atlas .atlasBrowse input,#atlas .atlasBrowse select{width:100%;min-width:0;margin:0 0 4px;padding:9px;background:#22383a;color:#fff;border:1px solid #526b69;border-radius:6px}
+#atlas #resultCount{font-size:12px;letter-spacing:.04em;color:#c6dfc6;margin:3px 0}
+#atlas #places{max-height:clamp(120px,31dvh,290px);overscroll-behavior:contain;scrollbar-gutter:stable}
+#atlas #places button{display:grid;gap:3px;padding:9px 11px;background:#213438;border-color:#3c5356}
+#atlas #places strong{font-size:14px}
+#atlas #places span{color:#b8ceca;font-size:12px}
+#atlas #places [aria-pressed=true]{border-color:#b6f665;background:#2c443c}
+#atlas .atlasFoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #405557}
+#atlas .atlasFoot p{margin:0;font-size:14px;color:#e3e8db}
+#atlas .atlasFoot button{flex-shrink:0;margin:0}
+@media(max-width:650px) and (orientation:portrait){
+ #atlas .atlasCols{grid-template-columns:minmax(0, .75fr) minmax(0,1.25fr)}
+ #atlas #country{height:100%;min-height:235px;max-height:53dvh}
+ #atlas #places{max-height:26dvh}
+ #atlas .atlasFoot{display:grid;grid-template-columns:1fr;gap:7px}
+}
+@media(max-height:490px) and (orientation:landscape){
+ #atlas .atlasCols{grid-template-columns:1fr 1.3fr}
+ #atlas #places{max-height:100px}
+ #atlas .atlasFoot{position:sticky;bottom:-24px;background:#162429;padding:8px 0}
+}
+#atlas #racePass{color:#afead2;font-weight:700;text-underline-offset:3px;white-space:nowrap}
+.launchpanel .extra{flex-wrap:wrap;column-gap:12px;row-gap:4px}

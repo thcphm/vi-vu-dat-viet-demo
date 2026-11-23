@@ -1,0 +1,39 @@
+Lớp dân cư và lớp phủ mặt đất của chế độ Xuyên Việt
+
+Dân cư
+WorldPop, University of Southampton. Bondarenko M., Priyatikanto R.,
+Tejedor-Garavito N., Zhang W., McKeen T., Cunningham A., Woods T., Hilton J.,
+Cihan D., Nosatiuk B., Brinkhoff T., Tatem A., Sorichetta A. (2025).
+Constrained estimates of 2015–2030 total number of people per grid square at
+a resolution of 3 arc (approximately 100m at the equator) R2025A version v1.
+Global Demographic Data Project, INV-045237. Vietnam, 2025 population counts.
+https://doi.org/10.5258/SOTON/WP00839
+https://stac.worldpop.org/collections/VNM/items/vnm_pop_2025_CN_100m_R2025A_v1
+Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+
+The game averages the reported residents across a 4×4 window of native 3-arc-second
+cells, stepping two cells at a time. The result is expressed in residents per native
+cell (~85–93 m wide in mainland Vietnam). Cells without a published count contribute
+no residents to the window. A window with no published counts is recorded as unknown.
+Values are logarithmically quantised for compact offline distribution.
+Traffic and pedestrian activity are game simulations driven by these estimates.
+
+Lớp phủ mặt đất
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021)
+processed by ESA WorldCover consortium.
+Zanaga et al. (2022). ESA WorldCover 10 m 2021 v200.
+https://doi.org/10.5281/zenodo.7254221
+https://esa-worldcover.org/en/data-access
+Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+
+The game resamples the published categorical overview from the 10 m WorldCover
+map to 1.5 arc seconds (~43–46 m) using nearest-neighbour resampling. Class codes
+follow WorldCover, including 10 tree cover, 20 shrubland, 30 grassland, 40 cropland,
+50 built-up, 60 bare/sparse vegetation, 70 snow/ice, 80 permanent water bodies,
+90 herbaceous wetland, 95 mangroves and 100 moss/lichen.
+
+Half-degree tiles cover the regions crossed by roads in the bundled road index.
+Coordinate system: WGS 84. Nodata in either layer is retained independently.
+Rebuild with tools/build_vn_environment.py using the source release above.

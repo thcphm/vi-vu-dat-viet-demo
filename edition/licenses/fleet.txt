@@ -1,0 +1,15 @@
+Vi vu đất Việt · thcphm — Original vehicle expansion
+
+Four fictional vehicle designs created for this edition. All geometry, coachwork, exterior details, glazing, registration plates and destination display are original procedural Blender artwork. The rims and glTF animation rig reuse the wheel-authoring code created for this edition’s Apex GT, Terra and Atlas.
+
+limo       Stretched navy limousine, formal grille and passenger compartment
+minivan    Plum MPV, sliding passenger doors and raised roof rails
+bus        Jade and ivory Đồng Nai service bus, route board, roof HVAC and passenger door pairs
+truck      Blue forward-control diesel truck with ribbed cargo box and locking rear doors
+
+Each glTF has metre units, +Y up and +Z forward. The pivot is centered horizontally with the tires on Y=0. Animated names: steer_FL, steer_FR, wheel_FL, wheel_FR, wheel_RL, wheel_RR. Brake calipers follow the steering uprights. Engine material names are paint_body and light_rear. The registration plates read THCPHM.
+
+The corresponding studio and rear WebP views are rendered from these same meshes with transparency. make_fleet.py is the complete model generator, which can be regenerated with Blender using the individual IDs above. For example:
+blender -b -t 2 --python make_fleet.py -- bus
+python finish_fleet.py bus-studio bus-rear
+The WebP conversion uses Pillow to crop each transparent render and apply a small median filter.

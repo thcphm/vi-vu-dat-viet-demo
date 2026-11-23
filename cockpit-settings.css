@@ -1,0 +1,18 @@
+#cockpitSettings {border: 1px solid #61786a; border-radius: 16px; padding: clamp(18px, 3vw, 28px); width: min(395px, 94vw); max-height: calc(100dvh - 24px); overflow: auto; overscroll-behavior: contain; background: #172723; color: #faf8ee}
+#cockpitSettings form {display: block}
+#cockpitSettings h2 {margin: 0 0 20px}
+#cockpitSettings fieldset {display: flex; gap: 5px; min-width: 0; padding: 0; margin: 0 0 17px; border: 0}
+#cockpitSettings legend {margin-bottom: 7px; padding: 0; font-size: 15px; font-weight: 650}
+#cockpitSettings label {position: relative; display: grid; flex: 1; min-height: 44px; place-items: center; border: 1px solid #667970; border-radius: 7px; background: #22362e; color: #dbe7dc; font-size: 15px; cursor: pointer}
+#cockpitSettings label:has(:checked) {background: #d7ebbc; color: #1b3024; border-color: #d7ebbc; font-weight: 700}
+#cockpitSettings label:has(:focus-visible) {outline: 3px solid #a7df58; outline-offset: 2px}
+#cockpitSettings input {position: absolute; opacity: 0; width: 1px; height: 1px}
+#cockpitSettings .settingsDone {width: 100%; min-height: 44px; margin-top: 4px; background: #d2f477; border: 0; border-radius: 7px; color: #152c29; font: 700 15px system-ui; cursor: pointer}
+#cockpitSettings [data-device=touch] {display: none}
+
+
+#cockpitSettings::backdrop {background: #06100ec9}
+@media (any-pointer: coarse), (max-width: 700px) {
+  #cockpitSettings [data-device=touch] {display: flex}
+  #cockpitSettings [data-device=keyboard] {display: none}
+}

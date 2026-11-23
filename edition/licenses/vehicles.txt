@@ -1,0 +1,6 @@
+Vi vu đất Việt · thcphm
+Apex GT, Terra 4×4 and Atlas Pickup are three original fictional vehicle designs created for this project. Their geometry, materials, wheel patterns, markings, lighting setup and renders were authored procedurally in Blender. No third-party car mesh, livery, car brand logo, vehicle texture or reference photograph is embedded.
+
+Each .glb is a complete, rigged, texture-free glTF 2.0 model using metallic/roughness PBR, clearcoat, and emissive rear lamp strips. Units are meters. Up = +Y, nose = +Z, ground = Y 0, origin = XZ bounds center. wheel_FL/FR/RL/RR rotate around their local X axes. Both right wheel nodes point local X outward in the opposite direction to the left nodes for the engine’s signed rotateX steps. steer_FL/FR pivot around +Y and carry their associated brake caliper and wheel. The paint_body and paint materials can be tinted together. The light_rear material drives the rear light guides. The six WebP images are transparent and tightly framed. *-studio uses a left-facing front three-quarter studio camera. *-rear uses a slightly rear-left chase camera. The same original geometry is used for all three representations.
+
+The plate text THCPHM and small model-name glyphs were converted to baked geometry using the system's DejaVu Sans Condensed Bold font. No font file is inside the GLBs.

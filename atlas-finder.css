@@ -1,0 +1,6 @@
+#atlas .atlasNearby {display:flex;flex-wrap:wrap;gap:6px;margin:1px 0 5px}
+#atlas .atlasNearby button {padding:6px 10px;min-height:32px;background:#22383a;color:#deeadf;border:1px solid #526b69;border-radius:16px;font-size:13px}
+#atlas .atlasNearby button:hover,#atlas .atlasNearby button:focus-visible {border-color:#b6f665;color:#e8ffca}
+#atlas #findPlace {font-size:16px}
+#atlas #places [aria-selected=true] {border-color:#b6f665;background:#2c443c}
+#atlas #retrySearch {align-self:flex-start}

@@ -1,0 +1,20 @@
+﻿Vietnam road graph
+© OpenStreetMap contributors, https://www.openstreetmap.org/copyright
+This derived database is distributed under the Open Data Commons Open Database License (ODbL) 1.0:
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Source: Geofabrik's Vietnam regional extract, snapshot 2026-11-18.
+https://download.geofabrik.de/asia/vietnam.html
+https://download.geofabrik.de/asia/vietnam/vietnam-261118.osm.pbf
+
+The game graph contains selected public motor-vehicle road classes. Edge endpoints
+follow the source OSM topology and intermediate shape points are simplified.
+The visitor approaches in ../vn-access/ are simulated alignments. Their junctions
+use this road graph. The generator uses OSM coastlines, building footprints and
+water geometry together with the game's elevation raster to place the roads.
+Mapped traffic controls and supported turn restrictions are packaged separately
+in ../vn-traffic/. Signal timing is simulated. Live traffic and temporary
+closures are outside this road dataset.
+The HUST landmark adds campus service lanes from the OSM API for simulated
+driving, including visitor- and staff-access roads. Real access rules vary.
+The overview and place search are derived from the same snapshot.

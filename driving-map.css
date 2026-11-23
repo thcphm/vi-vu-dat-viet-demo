@@ -1,0 +1,52 @@
+.journey button.navigationDock {padding:0; pointer-events:auto; touch-action:manipulation}
+.journey[data-awaiting-motion] button.navigationDock {display:grid}
+.journey .navigationDock .mapHint {
+  position:absolute; right:5px; bottom:5px; padding:2px 7px; border-radius:4px;
+  background:#12231ee8; color:#edf7df; font-size:12px;
+}
+.journey .navigationDock kbd {font:inherit; font-weight:800}
+.journey[data-dashboard-map] #openDrivingMap {inset:0 var(--right) auto auto; width:auto; min-height:44px; padding:0 12px; place-content:center; background-image:none}
+.journey[data-dashboard-map] #openDrivingMap #map {display:none}
+.journey[data-dashboard-map] #openDrivingMap .mapHint {position:static; background:transparent; font-size:14px}
+.journey #drivingMap {
+  padding:0; width:min(1040px,94vw); max-width:none; border:1px solid #779182;
+  border-radius:14px; background:#192c25; color:#fbf8ed;
+}
+#drivingMap[open] {display:flex; flex-direction:column}
+.areaMapHeader,.areaMapFooter {display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 18px}
+.areaMapHeader h2 {margin:0; font-size:clamp(20px,3vw,28px)}
+.areaMapHeader p {margin:2px 0 0; color:#c8d8c7; font-size:14px}
+#drivingMap button {min-height:40px; background:#273e32; color:#f5f8ec; border:1px solid #728677}
+#drivingMap #closeDrivingMap {background:#d5f596; color:#1e3223; border-color:#d5f596}
+.areaMapSheet {position:relative; height:min(61dvh,650px); min-height:110px; overflow:hidden; background:#d8e1d1}
+#areaMap {width:100%; height:100%; display:block; touch-action:none; cursor:grab}
+#areaMap:active {cursor:grabbing}
+.mapNorth,#mapScale {position:absolute; pointer-events:none; color:#244637; font-weight:750}
+.mapNorth {
+  top:10px; right:12px; display:grid; justify-items:center; gap:2px; padding:5px 7px;
+  border:1px solid #789383; border-radius:6px; background:#f5f7edee; font-size:12px;
+}
+.mapNorth::before {content:""; width:0; height:0; border-inline:5px solid transparent; border-bottom:12px solid #345943}
+#mapScale {bottom:11px; left:12px; text-align:center; background:#f5f7edef; border:solid #345943; border-width:0 2px 2px; font-size:13px}
+.areaMapFooter {padding-block:9px; flex-wrap:wrap; font-size:14px}
+.areaMapControls,.areaMapKey {display:flex; gap:6px; align-items:center}
+.areaMapControls button {min-width:42px; padding:5px 10px; font-size:18px}
+.areaMapControls #mapRecenter {font-size:14px}
+.areaMapControls button:disabled {opacity:.45}
+.areaMapKey {gap:5px 12px; flex-wrap:wrap; color:#e2ebde}
+.areaMapKey span {display:inline-flex; align-items:center; gap:5px}
+.areaMapKey i {width:9px; height:9px; background:#b37b60; border:1px solid #ffefcf; border-radius:50%}
+.areaMapKey .carSwatch {width:12px; height:13px; border:0; border-radius:0; background:#d5f596; clip-path:polygon(50% 0, 100% 100%, 50% 76%, 0 100%)}
+.areaMapKey a {margin:0; font-size:12px; color:#c3d1c2}
+@media(max-width:600px) {
+  .journey #drivingMap {width:96vw}
+  .areaMapHeader,.areaMapFooter {padding:9px 12px}
+  .areaMapFooter {gap:8px}
+  .areaMapKey {font-size:12px}
+  .areaMapHeader p {max-width:58vw; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+}
+@media(pointer:coarse) {.mapHint kbd {display:none}}
+@media(max-height:480px) {
+  .areaMapSheet {height:54dvh}
+  .areaMapHeader,.areaMapFooter {padding-block:5px}
+}
